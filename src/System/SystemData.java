@@ -1,33 +1,23 @@
 package System;
 
 public class SystemData {
-    private LinkedList<Campsite> campsites;
-    private LinkedList<Guest> guests;
-    private int nextBookingID;
+    private AuctionSystem auctionSystem;
 
-    public SystemData(LinkedList<Campsite> campsites, LinkedList<Guest> guests, int nextBookingID) {
-
-        if (campsites == null) {
-            throw new IllegalArgumentException("Campsite list cannot be null.");
+    public SystemData(AuctionSystem auctionSystem) {
+        if (auctionSystem == null) {
+            throw new IllegalArgumentException("Auction system cannot be null.");
         }
+        this.auctionSystem = auctionSystem;
+    }
 
-        if (guests == null) {throw new IllegalArgumentException("Guest list cannot be null.");
+    public AuctionSystem getAuctionSystem() {
+        return auctionSystem;
+    }
+
+    public void setAuctionSystem(AuctionSystem auctionSystem) {
+        if (auctionSystem == null) {
+            throw new IllegalArgumentException("Auction system cannot be null.");
         }
-
-        this.campsites = campsites;
-        this.guests = guests;
-        this.nextBookingID = nextBookingID;
-    }
-
-    public LinkedList<Campsite> getCampsites() {
-        return campsites;
-    }
-
-    public LinkedList<Guest> getGuests() {
-        return guests;
-    }
-
-    public int getNextBookingID() {
-        return nextBookingID;
+        this.auctionSystem = auctionSystem;
     }
 }

@@ -29,7 +29,7 @@ public class HashTable<V> {
 
     private void createBuckets() {
         for (int i = 0; i < buckets.length; i++) {
-            buckets[i] = new LinkedList<>();
+            buckets[i] = new LinkedList<HashEntry<V>>();
         }
     }
 
@@ -160,7 +160,7 @@ public class HashTable<V> {
     // --------------------------------------------------
 
     public LinkedList<V> values() {
-        LinkedList<V> values = new LinkedList<>();
+        LinkedList<V> values = new LinkedList<V>();
 
         for (int bucketIndex = 0; bucketIndex < buckets.length; bucketIndex++) {
             LinkedList<HashEntry<V>> bucket = buckets[bucketIndex];
@@ -174,7 +174,7 @@ public class HashTable<V> {
     }
 
     public LinkedList<Integer> keys() {
-        LinkedList<Integer> keys = new LinkedList<>();
+        LinkedList<Integer> keys = new LinkedList<Integer>();
 
         for (int bucketIndex = 0; bucketIndex < buckets.length; bucketIndex++) {
             LinkedList<HashEntry<V>> bucket = buckets[bucketIndex];
