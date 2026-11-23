@@ -124,13 +124,4 @@ public class XStreamPersistence {
         }
         return file.length();
     }
-
-    public boolean deleteSaveFile() {
-        File file = new File(FILE_NAME);
-
-        if (!file.exists()) {
-            return true;
-        }
-        return file.delete();
-    }
 }
